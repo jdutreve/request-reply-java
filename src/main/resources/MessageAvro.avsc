@@ -1,0 +1,56 @@
+ {
+"type": "record",
+"name": "MessageAvro",
+"fields": [
+  {"name": "id",  "type": "int"},
+  {"name": "name", "type": "string"},
+  {"name": "type", "type": "string"},
+  {"name": "timestamp", "type": "long"},
+  {"name": "correlationId", "type": "int"},
+
+  {"name": "flow", "type": {
+       "type": "record",
+       "name": "FlowAvro",
+       "fields": [
+           {"name": "id",  "type": "string"},
+           {"name": "idName",  "type": "string"},
+           {"name": "name",  "type": "string"},
+           {"name": "variant",  "type": "string"},
+           {"name": "variantName", "type": "string"}
+       ]
+  }},
+
+  {"name": "operation", "type": {
+       "type": "record",
+       "name": "OperationAvro",
+       "fields": [
+           {"name": "name",  "type": "string"},
+           {"name": "service",  "type": "string"},
+           {"name": "environment",  "type": "string"},
+           {"name": "timestamp", "type": "long"},
+           {"name": "durationUs", "type": "int"}
+       ]
+  }},
+
+  {"name": "entity", "type": {
+       "type": "record",
+       "name": "EntityAvro",
+       "fields": [
+           {"name": "id",  "type": "string"},
+           {"name": "idName",  "type": "string"},
+           {"name": "name",  "type": "string"}
+       ]
+  }},
+
+  {"name": "user", "type": {
+       "type": "record",
+       "name": "UserAvro",
+       "fields": [
+           {"name": "id",  "type": "string"},
+           {"name": "idName",  "type": "string"},
+           {"name": "companyId",  "type": "string"},
+           {"name": "companyIdName", "type": "string"}
+       ]
+  }}
+]
+} 
