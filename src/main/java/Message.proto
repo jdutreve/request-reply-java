@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option optimize_for = SPEED;
+
+message Message {
+    fixed32 id = 1;
+    string name = 2;
+    string type = 3;
+    fixed64 timestamp = 4;
+    fixed32 correlationId = 5;
+
+    Flow flow = 6;
+    User user = 7;
+    Entity entity = 8;
+    Operation operation = 9;
+}
+
+message User {
+    string id = 1;
+    string idName = 2;
+    string companyId = 3;
+    string companyIdName = 4;
+}
+
+message Flow {
+    string id = 1;
+    string idName = 2;
+    string name = 3;
+    string variant = 4;
+    string variantName = 5;
+}
+
+message Entity {
+    string id = 1;
+    string idName = 2;
+    string name = 3;
+}
+
+message Operation {
+    string name = 1;
+    string service = 2;
+    string environment = 3;
+    fixed64 timestamp = 4;
+    fixed32 durationUs = 5;
+}
+
